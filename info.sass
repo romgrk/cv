@@ -55,6 +55,37 @@ body
 
 .content
   padding: 1cm
+  line-height: 15pt
+  h1
+    font: 18pt $font-bold
+    font-variant: small-caps
+    color: #302020
+    margin: 0 0 15pt
+    > .fa
+      font-size: 0.8em
+      color: #afa0a0
+      
+  h2
+    font: 15pt $font-bold
+    color: $accent-color
+    margin: 0 0 15pt
+  h3
+    font: 13pt $font-bold
+    font-variant: small-caps
+
+.section
+  display: inline-block
+  margin-bottom: 15pt
+  &.sm
+    width: 30%
+  &.md
+    width: 50%
+  &.lg
+    width: 70%
+
+=accent
+  font: $size-bold
+  color: $accent-color
 
 .training
   color: $general-fg
