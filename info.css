@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Cheltenham";
+  src: url("./nyt-cheltenham-400-normal.woff"); }
+* {
+  color: inherit;
+  background-color: inherit;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font: 12pt "Cheltenham";
+  background-color: #fafafa; }
+
+.page {
+  width: 21cm;
+  max-width: 21cm;
+  min-height: 29.7cm;
+  max-height: 29.7cm;
+  offset: hidden;
+  background: white; }
+
+.header {
+  padding: 0.2cm 1cm;
+  width: 100%;
+  color: #deded9 !important;
+  background-color: #343434 !important; }
+  .header .desc {
+    display: inline-block;
+    width: 50%; }
+  .header .name {
+    color: #deded9 !important;
+    font: 20pt "nyt-cheltenham-700-normal"; }
+  .header .links {
+    display: inline-block;
+    vertical-align: top; }
+
+.content {
+  padding: 1cm; }
+
+.training {
+  color: #101010; }
+
+@page {
+  size: A4;
+  margin: 0; }
+@media print {
+  .page {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    background: initial;
+    page-break-after: always; } }
+
+/*# sourceMappingURL=info.css.map */

@@ -1,0 +1,77 @@
+// !:sass [.]
+
+$size-normal: 12pt "nyt-cheltenham-400-normal"
+$size-bold: 12pt "nyt-cheltenham-700-normal"
+$size-huge: 20pt "nyt-cheltenham-700-normal"
+
+$general-bg: #fafafa
+$general-fg: #101010
+$head-bg: #343434
+$head-fg: #deded9
+
+
+@font-face
+  font-family: "Cheltenham"
+  src: url("./nyt-cheltenham-400-normal.woff")
+
+* 
+  color: inherit
+  background-color: inherit
+  box-sizing: border-box
+  -moz-box-sizing: border-box
+
+body     
+  margin: 0
+  padding: 0
+  font: 12pt "Cheltenham"
+  background-color: $general-bg
+  //font: 12pt "Droid Sans Mono for Powerline"
+
+.page 
+  width: 21cm
+  max-width: 21cm
+  min-height: 29.7cm
+  max-height: 29.7cm
+  offset: hidden 
+
+  //padding: 0 1cm
+  //margin: 1cm auto
+  background: white
+
+.header
+  padding: 0.2cm 1cm
+  width: 100%
+  color: $head-fg             !important
+  background-color: $head-bg  !important
+  .desc
+    display: inline-block
+    width: 50%
+  .name
+    color: $head-fg             !important
+    font: $size-huge
+  .links
+    display: inline-block
+    vertical-align: top
+
+.content
+  padding: 1cm
+
+.training
+  color: $general-fg
+
+
+@page 
+  size: A4
+  margin: 0
+
+@media print 
+  .page 
+    margin: 0
+    border: initial
+    border-radius: initial
+    width: initial
+    min-height: initial
+    background: initial
+    page-break-after: always
+  
+
