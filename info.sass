@@ -1,18 +1,32 @@
 // !:sass [.]
 
+@font-face
+  font-family: "Cheltenham"
+  //src: url("./fonts/nyt-cheltenham-400-normal.woff")
+  src: url("./fonts/cheltenham.ttf")
+@font-face
+  font-family: "Cheltenham"
+  src: url("./fonts/cheltenham-italic.ttf")
+  font-style: italic
+//@font-face
+  //font-family: "Cheltenham"
+  //src: url("./fonts/nyt-cheltenham-700-normal.woff")
+  //font-weight: bold
+
+$font-bold: "nyt-cheltenham-700-normal"
+
 $size-normal: 12pt "nyt-cheltenham-400-normal"
 $size-bold: 12pt "nyt-cheltenham-700-normal"
 $size-huge: 20pt "nyt-cheltenham-700-normal"
 
+$accent-color: #ed4040
+$faded-color: #a0a0a0
 $general-bg: #fafafa
 $general-fg: #101010
 $head-bg: #343434
-$head-fg: #deded9
+$head-fg: #c3c3c0
+$name-fg: #ffffff
 
-
-@font-face
-  font-family: "Cheltenham"
-  src: url("./nyt-cheltenham-400-normal.woff")
 
 * 
   color: inherit
@@ -23,7 +37,8 @@ $head-fg: #deded9
 body     
   margin: 0
   padding: 0
-  font: 12pt "Cheltenham"
+  font: 10pt 'Monserrat', sans-serif
+  line-height: 15pt
   background-color: $general-bg
   //font: 12pt "Droid Sans Mono for Powerline"
 
@@ -38,40 +53,86 @@ body
   //margin: 1cm auto
   background: white
 
+=accent
+  color: $accent-color
+
+.bold
+  font: $size-bold
+
+  //&::before
+    //content: '§'
+hr
+  border: 0
+  height: 1px
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+
+a
+  //font: 10pt normal "Verdana"
+  color: $faded-color
+strong
+  font: $size-bold
+p
+  margin: 0 0 1em
+  line-height: 15pt
+h1
+  font: 18pt $font-bold
+  margin-left: -1em
+  //font-variant: small-caps
+  color: #302020
+  margin: 0 0 10pt
+  padding-bottom: 5pt
+  //border-bottom: 1px solid #e0e0e0
+  .fa
+    font-size: 0.7em
+    //&::before
+    //height: 1rem
+    color: $faded-color
+h2
+  font: 15pt $font-bold
+  color: $accent-color
+  margin: 0 0 15pt
+h3
+  font: 13pt $font-bold
+  font-variant: small-caps
+
+.item
+  b
+    font: $size-bold
+  a
+    //font: 10pt normal "Verdana"
+    color: $faded-color
+
 .header
-  padding: 0.2cm 1cm
+  display: table
+  margin: 0
+  padding: 1em 1cm
   width: 100%
   color: $head-fg             !important
   background-color: $head-bg  !important
+  //background: url(bg.png)
   .desc
-    display: inline-block
-    width: 50%
+    display: table-cell
+    font: 12pt "Cheltenham"
+    //width: 50%
   .name
-    color: $head-fg             !important
+    color: #333 !important
+    //text-shadow: 0px 2px 3px #555
+    padding-right: 0.5em
+    color: $name-fg             !important
     font: $size-huge
-  .links
-    display: inline-block
-    vertical-align: top
+  .git
+    //font: $size-normal
+    font-size: 10pt
+  .contact
+    display: table-cell
+    padding: 0
+    //font: 10pt "Verdana"
+    //vertical-align: 
+    //text-align: right
 
 .content
-  padding: 1cm
+  padding: 2em 1cm
   line-height: 15pt
-  h1
-    font: 18pt $font-bold
-    font-variant: small-caps
-    color: #302020
-    margin: 0 0 15pt
-    > .fa
-      font-size: 0.8em
-      color: #afa0a0
-      
-  h2
-    font: 15pt $font-bold
-    color: $accent-color
-    margin: 0 0 15pt
-  h3
-    font: 13pt $font-bold
-    font-variant: small-caps
 
 .section
   display: inline-block
@@ -83,26 +144,52 @@ body
   &.lg
     width: 70%
 
-=accent
-  font: $size-bold
-  color: $accent-color
+.experience
+  .date
+    font: $size-bold
+    +accent
 
 .training
   color: $general-fg
+  .date
+    float: right
+    font: $size-bold
+    +accent
 
+.languages
+  float: right
+ul
+  &::before
+    content: 'ABC'
+    font-weight: bolder
+    font-size: 16pt
+    color: #2d2d2d
+    text-shadow: 1px 1px rgba(255,255,255,0.2), -1px -1px rgba(0,0,0,0.5)
+  b
+    font-size: bolder
+  //margin: 0.2em
+  padding: 1em
+  line-height: 15pt
+  color: $general-bg
+  //background: url(bg.png)
+  background-color: $head-bg
+  background-repeat: repeat
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+  border-radius: 5px
+  list-style: none
 
 @page 
   size: A4
   margin: 0
 
-@media print 
-  .page 
-    margin: 0
-    border: initial
-    border-radius: initial
-    width: initial
-    min-height: initial
-    background: initial
-    page-break-after: always
+//@media print 
+  //.page 
+    //margin: 0
+    //border: initial
+    //border-radius: initial
+    //width: initial
+    //min-height: initial
+    //background: initial
+    //page-break-after: always
   
 
