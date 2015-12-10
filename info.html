@@ -1,36 +1,132 @@
 <!DOCTYPE html>
 <!-- ::exe [] -->
-<html> 
+<html>
 <head>
-  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
   <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
-  <link rel="stylesheet" href="file:///home/romgrk/doc/trucs/cv/info.css" />
-  <!--<link rel="stylesheet" href="./info.css" />-->
+  <!--<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>-->
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <!--<link href='//fonts.googleapis.com/css?family=Playfair+Display+SC:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
+  <link href='//fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
+  <link href="http://www.w3schools.com/lib/w3.css" rel="stylesheet" />
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.cssrel="stylesheet" ">
+  <link href="file:///home/romgrk/github/cv/info.css" rel="stylesheet" />
+  <link href="./info.css" rel="stylesheet" />
+  <link href="./fonts/garamond.css" rel="stylesheet" />
   <style>
 </style>
 </head>
 <body>
 
+<!-- Baseliner -->
+<script src="http://files.keyes.ie/things/baseliner/baseliner-latest.min.js"></script>
+<script>
+window.onload = function() {
+    baseliner = new Baseliner(11);
+}
+</script>
+
+  <div style="height:1em;"> </div>
+  <span>effet</span>
   <div class="page">
     <div class="header">
-      
       <div class="desc">
-        <span class="name">Romain Gr&eacute;goire</span>
-        <br/>
-        programmeur
-      </div>
+        <span class="name">Romain Grégoire</span>
+        <span class="git">
+          <span class="fa fa-github">
+            github.com/romgrk
+          </span>
+        </span>
 
-      <div class="links">
-        <i style="color:white" class="fa fa-github"></i>
-        github.com/romgrk
+        <br/>
+        <span>programmeur</span>
+      </div>
+      <div class="contact">
+        <span class="fa fa-phone">
+        (514) 778-1580
+        </span>
+        <br/>
+        <span class="fa fa-envelope">
+        romgrk.cc@gmail.com
+        </span>
       </div>
     </div>
     <div class="content">
-      <div class="training"></div>
-    
-    </div>    
+      <div class="experience section lg">
+        <div class="fa fa-suitcase title">Expériences</div>
+
+        <span class="item">
+          <span class="date">2015</span>
+          <b>Termrk</b>
+          <a>http://atom.io/packages/termrk</a>
+        </span>
+        <p>Collège de Maisonneuve</p>
+
+        <span class="item">
+          <span class="date">2014</span>
+          <b>Mouvement Démocratie Nouvelle</b>
+          <a>http://meilleuredemocratie.com</a>
+        </span>
+        <p> Développement web &mdash; ajout d'une carte intéractive des évènements
+        à venir du MDN via l'API Google Maps, ainsi que d'une section
+        d'administration sécurisée.  </p>
+
+        <span class="item">
+          <span class="date">2012</span>
+          <b>Projet de DEC</b>
+          <a>TODO ref</a>
+        </span>
+        <p> Conception et implémentation en Java d'un logicial de simulation des
+        lois de la physique, appliquées à des objets solides en 2D (ex.:
+        collisions, gravité, friction, ...) </p>
+
+        <span class="item">
+          <span class="date">2009</span>
+          <b>Apathy is Boring</b>
+          <a>http://citizenfactory.com</a>
+        </span>
+        <p>Programmeur web &mdash; maintenance générale et mise à jour d'une
+        application de recherche d'informations diverses en lien avec le
+        parlement canadien.
+        Application en Ruby.</p>
+
+      </div>
+
+      <hr/>
+
+      <div class="training section lg">
+        <h1><span class="fa fa-university fa-1x"></span> Formation</h1>
+        <!--<h1>Formation</h1>-->
+        <strong class="serif">DEC, Sc. Informatiques et Mathématiques</strong>
+        <span class="date">2009-2014</span>
+        <br/>
+        <p>Collège de Maisonneuve</p>
+
+
+        <strong class="serif">Cours en Génie Logiciel</strong>
+        <span class="date">2012</span>
+        <br/>
+        <p>École de Technologie supérieure</p>
+
+      </div>
+      <hr/>
+
+      <div class="languages section sm">
+        <!--<span class="fa fa-font"></span>-->
+        <!--<strong>LANGUES</strong>-->
+        <ul>
+          <li><b>Français</b> excellent</li>
+          <li>
+            <b>Anglais</b> oral:courant,
+            écrit/technique:excellent
+          </li>
+
+          <li><b>Espagnol</b> courant</li>
+        </ul>
+      </div>
+    </div>
   </div>
+
 
 </body>
 </html>

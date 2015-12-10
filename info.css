@@ -1,16 +1,63 @@
-@font-face {
-  font-family: "Cheltenham";
-  src: url("./nyt-cheltenham-400-normal.woff"); }
-* {
-  color: inherit;
-  background-color: inherit;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box; }
-
-body {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
-  font: 12pt "Cheltenham";
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+@font-face {
+  font-family: "garamond-premier-pro";
+  src: url(./fonts/Garamond-Premier-Pro.ttf); }
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-family: "garamond-premier-pro", Serif;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga", "dlig";
+  color: #101010;
   background-color: #fafafa; }
 
 .page {
@@ -21,38 +68,83 @@ body {
   offset: hidden;
   background: white; }
 
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
+
+a {
+  color: #a0a0a0; }
+
+.item a {
+  color: #a0a0a0; }
+
 .header {
-  padding: 0.2cm 1cm;
+  display: table;
+  margin: 0;
+  padding: 1em 1cm;
   width: 100%;
-  color: #deded9 !important;
+  color: #c3c3c0 !important;
   background-color: #343434 !important; }
   .header .desc {
-    display: inline-block;
-    width: 50%; }
+    display: table-cell; }
   .header .name {
-    color: #deded9 !important;
-    font: 20pt "nyt-cheltenham-700-normal"; }
-  .header .links {
-    display: inline-block;
-    vertical-align: top; }
+    font: 900 20px "PT Sans", serif;
+    color: #333 !important;
+    color: #ffffff !important;
+    padding-right: 0.5em; }
+  .header .contact {
+    display: table-cell;
+    padding: 0; }
 
 .content {
-  padding: 1cm; }
+  padding: 2em 1cm; }
+
+.section {
+  display: inline-block;
+  margin-bottom: 15px; }
+  .section.sm {
+    width: 30%; }
+  .section.md {
+    width: 50%; }
+  .section.lg {
+    width: 70%; }
+  .section > .title {
+    display: block;
+    font-family: "PT Sans", serif;
+    font-size: 20px; }
+    .section > .title::before {
+      color: #a0a0a0;
+      padding-right: 5px; }
+
+.experience .date {
+  font-family: "PT Sans", serif;
+  font-weight: bold;
+  color: #ed4040; }
 
 .training {
   color: #101010; }
+  .training .date {
+    float: right;
+    color: #ed4040; }
+
+.languages {
+  float: right; }
+
+ul {
+  padding: 1em;
+  line-height: 15px;
+  color: #fafafa;
+  background-color: #343434;
+  background-repeat: repeat;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  list-style: none; }
+  ul b {
+    font-size: bolder; }
 
 @page {
   size: A4;
   margin: 0; }
-@media print {
-  .page {
-    margin: 0;
-    border: initial;
-    border-radius: initial;
-    width: initial;
-    min-height: initial;
-    background: initial;
-    page-break-after: always; } }
 
 /*# sourceMappingURL=info.css.map */

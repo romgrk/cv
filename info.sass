@@ -1,23 +1,15 @@
 // !:sass [.]
 
-@font-face
-  font-family: "Cheltenham"
-  //src: url("./fonts/nyt-cheltenham-400-normal.woff")
-  src: url("./fonts/cheltenham.ttf")
-@font-face
-  font-family: "Cheltenham"
-  src: url("./fonts/cheltenham-italic.ttf")
-  font-style: italic
-//@font-face
-  //font-family: "Cheltenham"
-  //src: url("./fonts/nyt-cheltenham-700-normal.woff")
-  //font-weight: bold
+@import compass/reset
+@import compass/css3
 
-$font-bold: "nyt-cheltenham-700-normal"
+@font-face
+  font-family: "garamond-premier-pro"
+  src: url(./fonts/Garamond-Premier-Pro.ttf)
 
-$size-normal: 12pt "nyt-cheltenham-400-normal"
-$size-bold: 12pt "nyt-cheltenham-700-normal"
-$size-huge: 20pt "nyt-cheltenham-700-normal"
+$font-default: 'garamond-premier-pro',Serif
+$font-serif:   'PT Sans',serif
+$font-sans:    'Open Sans',sans-serif
 
 $accent-color: #ed4040
 $faded-color: #a0a0a0
@@ -27,79 +19,44 @@ $head-bg: #343434
 $head-fg: #c3c3c0
 $name-fg: #ffffff
 
+// $baseline: 11px // 10.6667px
+$baseline: 1em
 
-* 
-  color: inherit
-  background-color: inherit
-  box-sizing: border-box
-  -moz-box-sizing: border-box
+*
+  +box-sizing(border-box)
 
-body     
-  margin: 0
-  padding: 0
-  font: 10pt 'Monserrat', sans-serif
-  line-height: 15pt
+body
+  font-family:           $font-default
+  text-rendering:        optimizeLegibility
+  font-feature-settings: "liga","dlig"
+  // line-height: 15px
+  color:            $general-fg
   background-color: $general-bg
-  //font: 12pt "Droid Sans Mono for Powerline"
 
-.page 
+.page
   width: 21cm
   max-width: 21cm
   min-height: 29.7cm
   max-height: 29.7cm
-  offset: hidden 
-
-  //padding: 0 1cm
-  //margin: 1cm auto
+  offset: hidden
   background: white
 
 =accent
   color: $accent-color
 
-.bold
-  font: $size-bold
-
-  //&::before
-    //content: '§'
 hr
   border: 0
   height: 1px
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
 
+
 a
-  //font: 10pt normal "Verdana"
   color: $faded-color
-strong
-  font: $size-bold
-p
-  margin: 0 0 1em
-  line-height: 15pt
-h1
-  font: 18pt $font-bold
-  margin-left: -1em
-  //font-variant: small-caps
-  color: #302020
-  margin: 0 0 10pt
-  padding-bottom: 5pt
-  //border-bottom: 1px solid #e0e0e0
-  .fa
-    font-size: 0.7em
-    //&::before
-    //height: 1rem
-    color: $faded-color
-h2
-  font: 15pt $font-bold
-  color: $accent-color
-  margin: 0 0 15pt
-h3
-  font: 13pt $font-bold
-  font-variant: small-caps
 
 .item
-  b
-    font: $size-bold
+  // font: 12px $font-sans
   a
-    //font: 10pt normal "Verdana"
+    // font: 12px $font-sans
     color: $faded-color
 
 .header
@@ -112,64 +69,70 @@ h3
   //background: url(bg.png)
   .desc
     display: table-cell
-    font: 12pt "Cheltenham"
-    //width: 50%
   .name
-    color: #333 !important
-    //text-shadow: 0px 2px 3px #555
+    font: 900 20px $font-serif
+    color: #333     !important
+    color: $name-fg !important
     padding-right: 0.5em
-    color: $name-fg             !important
-    font: $size-huge
-  .git
-    //font: $size-normal
-    font-size: 10pt
+  // .git
+  //   font-size: 14px
   .contact
     display: table-cell
+    // font-size: 14px
+    // line-height: 16px
     padding: 0
     //font: 10pt "Verdana"
-    //vertical-align: 
+    //vertical-align:
     //text-align: right
 
 .content
   padding: 2em 1cm
-  line-height: 15pt
+  // line-height: 15px
 
 .section
   display: inline-block
-  margin-bottom: 15pt
+  margin-bottom: 15px
   &.sm
     width: 30%
   &.md
     width: 50%
   &.lg
     width: 70%
+  > .title
+    display: block
+    font-family: $font-serif
+    font-size: 20px
+    &::before
+      color: $faded-color
+      padding-right: 5px
 
 .experience
   .date
-    font: $size-bold
+    font-family: $font-serif
+    font-weight: bold
     +accent
 
 .training
   color: $general-fg
   .date
     float: right
-    font: $size-bold
+    // font-weight: bold
     +accent
 
 .languages
   float: right
 ul
-  &::before
-    content: 'ABC'
-    font-weight: bolder
-    font-size: 16pt
-    color: #2d2d2d
-    text-shadow: 1px 1px rgba(255,255,255,0.2), -1px -1px rgba(0,0,0,0.5)
+  //&::before
+    //content: 'ABC'
+    //font-weight: bolder
+    //font-size: 16px
+    //color: #2d2d2d
+    //text-shadow: 1px 1px rgba(255,255,255,0.2), -1px -1px rgba(0,0,0,0.5)
   b
     font-size: bolder
   //margin: 0.2em
   padding: 1em
-  line-height: 15pt
+  line-height: 15px
   color: $general-bg
   //background: url(bg.png)
   background-color: $head-bg
@@ -178,12 +141,12 @@ ul
   border-radius: 5px
   list-style: none
 
-@page 
+@page
   size: A4
   margin: 0
 
-//@media print 
-  //.page 
+//@media print
+  //.page
     //margin: 0
     //border: initial
     //border-radius: initial
@@ -191,5 +154,3 @@ ul
     //min-height: initial
     //background: initial
     //page-break-after: always
-  
-
