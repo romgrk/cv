@@ -1,150 +1,60 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline; }
+/*
+Error: File to import not found or unreadable: compass/reset.
+       Load path: /home/romgrk/github/cv
+        on line 3 of info.sass
 
-html {
-  line-height: 1; }
+1: // !:sass [.]
+2: 
+3: @import compass/reset
+4: @import compass/css3
+5: 
+6: @font-face
+7:   font-family: "garamond-premier-pro"
+8:   src: url(./fonts/Garamond-Premier-Pro.ttf)
 
-ol, ul {
-  list-style: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle; }
-
-q, blockquote {
-  quotes: none; }
-  q:before, q:after, blockquote:before, blockquote:after {
-    content: "";
-    content: none; }
-
-a img {
-  border: none; }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block; }
-
-@font-face {
-  font-family: "garamond-premier-pro";
-  src: url(./fonts/Garamond-Premier-Pro.ttf); }
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
-body {
-  font-family: "garamond-premier-pro", Serif;
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "liga", "dlig";
-  color: #101010;
-  background-color: #fafafa; }
-
-.page {
-  width: 21cm;
-  max-width: 21cm;
-  min-height: 29.7cm;
-  max-height: 29.7cm;
-  offset: hidden;
-  background: white; }
-
-hr {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
-
-a {
-  color: #a0a0a0; }
-
-.item a {
-  color: #a0a0a0; }
-
-.header {
-  display: table;
-  margin: 0;
-  padding: 1em 1cm;
-  width: 100%;
-  color: #c3c3c0 !important;
-  background-color: #343434 !important; }
-  .header .desc {
-    display: table-cell; }
-  .header .name {
-    font: 900 20px "PT Sans", serif;
-    color: #333 !important;
-    color: #ffffff !important;
-    padding-right: 0.5em; }
-  .header .contact {
-    display: table-cell;
-    padding: 0; }
-
-.content {
-  padding: 2em 1cm; }
-
-.section {
-  display: inline-block;
-  margin-bottom: 15px; }
-  .section.sm {
-    width: 30%; }
-  .section.md {
-    width: 50%; }
-  .section.lg {
-    width: 70%; }
-  .section > .title {
-    display: block;
-    font-family: "PT Sans", serif;
-    font-size: 20px; }
-    .section > .title::before {
-      color: #a0a0a0;
-      padding-right: 5px; }
-
-.experience .date {
-  font-family: "PT Sans", serif;
-  font-weight: bold;
-  color: #ed4040; }
-
-.training {
-  color: #101010; }
-  .training .date {
-    float: right;
-    color: #ed4040; }
-
-.languages {
-  float: right; }
-
-ul {
-  padding: 1em;
-  line-height: 15px;
-  color: #fafafa;
-  background-color: #343434;
-  background-repeat: repeat;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
-  list-style: none; }
-  ul b {
-    font-size: bolder; }
-
-@page {
-  size: A4;
-  margin: 0; }
-
-/*# sourceMappingURL=info.css.map */
+Backtrace:
+info.sass:3
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/import_node.rb:45:in `import'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/import_node.rb:28:in `imported_file'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/import_node.rb:37:in `css_import?'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:293:in `watch'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/plugin.rb:108:in `method_missing'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:381:in `watch_or_update'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/exec/base.rb:52:in `parse'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/lib/sass/exec/base.rb:19:in `parse!'
+/var/lib/gems/2.1.0/gems/sass-3.4.19/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: compass/reset.\A        Load path: /home/romgrk/github/cv\A         on line 3 of info.sass\A \A 1: // !:sass [.]\A 2: \A 3: @import compass/reset\A 4: @import compass/css3\A 5: \A 6: @font-face\A 7:   font-family: \"garamond-premier-pro\"\A 8:   src: url(./fonts/Garamond-Premier-Pro.ttf)"; }

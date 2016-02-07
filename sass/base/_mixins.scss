@@ -7,11 +7,10 @@
 $breakpoints-limit: length($breakpoints);
 
 // List of rootsizes, breakpoints, and max-widths.
-$sizes: map-values($rootsizes);
-$points: map-values($breakpoints);
+$sizes:       map-values($rootsizes);
+$points:      map-values($breakpoints);
 $line-widths: map-values($measures);
-$max-widths: map-values($maxwidths);
-
+$max-widths:  map-values($maxwidths);
 
 // Breakpoints. Either set one to one of the breakpoint variables, or use a custom value for minor breakpoints.
 // Defaults to min-width, but both min->max and max-width are available too.

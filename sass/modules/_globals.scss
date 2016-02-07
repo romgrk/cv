@@ -1,15 +1,10 @@
 // Global demo styles
 // ---------------------------------------
 
-* {
-  font: normal 1rem map-get($bodytype, font-family);
-}
-
 body {
   color:            $bodyColour;
   background-color: $backgroundColour;
-  font-family:      'garamond-premier-pro';
-  text-rendering:   optimizeLegibility;
+  // font-family:      'garamond-premier-pro';
   overflow-x:       hidden;
 }
 
@@ -35,8 +30,6 @@ body {
 }
 
 img {
-  -ms-interpolation-mode: bicubic;
-
   height: auto;
   vertical-align: middle;
   width: 100%;

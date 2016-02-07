@@ -1,10 +1,23 @@
 /* CSS compiled from SCSS */
 /* --------------------------------------- */
 
-@font-face {
-  font-family: "garamond-premier-pro";
-  src: url(../fonts/Garamond-Premier-Pro.ttf);
-}
+$headingColor: #494949;
+$headerColor:  #DEDEDE;
+$bodyColor:    #494949;
+$captionColor: #7F7F7F;
+$textColor:    #DEDEDE;
+$white:        #efefef;
+
+// Background colours.
+$backgroundColor:        #FCFCFC;
+$headerBackgroundColor:  #2E2E2E;
+$headingBackgroundColor: #2E2E2E;
+$codeBackgroundColor:    #F5F4F2;
+$captionBackgroundColor: #BDC8CC;
+
+$accentColor:  #BC1818;
+$linkColor:    #0E58F5;
+$hoverColor:   #0B348B;
 
 // Import Sassline base SCSS files in order so variables are read correctly.
 @import "base/reset";
@@ -14,36 +27,50 @@
 @import "base/typography";
 @import "base/layouts";
 
-// Import all SCSS modules with Sass globbing.
-@import "modules/*.*";
-
-html {
-  @include rootsize;
+body {
+  background-color: $captionBackgroundColor;
 }
 
-h1 {
-  font-family: 'Playfair Display';
-  @include fontsize(21, 0);
-  font-weight: bold;
+header {
+  text-align:       center;
+  color:            $headerColor;
+  background-color: $headerBackgroundColor;
+
+  .subtitle {
+    margin-top: -3rem;
+    color: fade-out($headerColor, 0.3);
+    font-size: 14px;
+  }
+
+  .contact.bar {
+    color:            white;
+    background-color: $accentColor;
+  }
+
 }
 
-h2 {
-  @include fontsize(19, 0);
-  font-family: 'garamond-premier-pro';
-  font-weight: bold;
+.content {
+  margin: 0 1rem;
 }
 
-p, span, div {
-  @include fontsize(16, 0);
-}
-
-// Demo baseline grid styles.
 #baseline.show-grid {
-  @include fontsize(16, 0);
-  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0, rgba(255,255,255,0) 1px);
-  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0, rgba(255,255,255,0) 1px);
-  background-image: -o-linear-gradient(top, rgba(0,0,0,0.5) 0, rgba(255,255,255,0) 1px);
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0, rgba(255,255,255,0) 1px);
+  @include fontsize(12, 0);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0, rgba(255,255,255,0) 1px);
   background-repeat: repeat-y;
   background-size: 100% 1rem;
+
+  margin: 0 auto;
+  border: 1px solid gray;
+  background-color: $backgroundColor;
 }
+
+a {
+  transition: color .1s, background-color .1s;
+  color: $linkColor;
+  text-decoration: none;
+  &:hover, &:active, &:focus {
+    color: $hoverColor;
+    text-decoration: none;
+  }
+}
+
