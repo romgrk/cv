@@ -1,24 +1,5 @@
 /* CSS compiled from SCSS */
 /* --------------------------------------- */
-
-$headingColor: #494949;
-$headerColor:  #DEDEDE;
-$bodyColor:    #494949;
-$captionColor: #7F7F7F;
-$textColor:    #DEDEDE;
-$white:        #efefef;
-
-// Background colours.
-$backgroundColor:        #FCFCFC;
-$headerBackgroundColor:  #2E2E2E;
-$headingBackgroundColor: #2E2E2E;
-$codeBackgroundColor:    #F5F4F2;
-$captionBackgroundColor: #BDC8CC;
-
-$accentColor:  #BC1818;
-$linkColor:    #0E58F5;
-$hoverColor:   #0B348B;
-
 // Import Sassline base SCSS files in order so variables are read correctly.
 @import "base/reset";
 @import "base/variables";
@@ -27,50 +8,191 @@ $hoverColor:   #0B348B;
 @import "base/typography";
 @import "base/layouts";
 
-body {
-  background-color: $captionBackgroundColor;
-}
+@import "modules/globals";
 
-header {
-  text-align:       center;
-  color:            $headerColor;
-  background-color: $headerBackgroundColor;
-
-  .subtitle {
-    margin-top: -3rem;
-    color: fade-out($headerColor, 0.3);
-    font-size: 14px;
-  }
-
-  .contact.bar {
-    color:            white;
-    background-color: $accentColor;
-  }
-
-}
-
-.content {
-  margin: 0 1rem;
-}
-
-#baseline.show-grid {
+#baseline {
   @include fontsize(12, 0);
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0, rgba(255,255,255,0) 1px);
-  background-repeat: repeat-y;
-  background-size: 100% 1rem;
-
   margin: 0 auto;
   border: 1px solid gray;
   background-color: $backgroundColor;
-}
-
-a {
-  transition: color .1s, background-color .1s;
-  color: $linkColor;
-  text-decoration: none;
-  &:hover, &:active, &:focus {
-    color: $hoverColor;
-    text-decoration: none;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.0) 0, rgba(255,255,255,0) 1px);
+  background-repeat: repeat-y;
+  background-size: 100% 1rem;
+  &.show-grid {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0, rgba(255,255,255,0) 1px);
   }
 }
 
+body {
+  background-color: $captionBackgroundColor;
+  padding-top: 5rem;
+}
+
+header {
+  color:            $headerColor;
+  background-color: $headerBackgroundColor;
+  position:         relative;
+  text-align:       center;
+
+  h1.title {
+    font-weight: bold;
+    @include baseline(gamma, $titletype, 3, 1, all);
+    @include fontsize(gamma, all);
+  }
+  .subtitle {
+    color: fade-out($headerColor, 0.3);
+    // @include baseline(zeta, $bodytype, 1, 0, all);
+    // @include fontsize(zeta, all);
+    // margin-top: -0.5rem;
+    // position: absolute;
+    // top: 0rem;
+  }
+
+  .lang {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0.5rem;
+      text-align: right;
+  }
+
+  div.bar {
+    color:            white;
+    background-color: $accentColor;
+
+    i { padding-left: 1rem; }
+
+    @include baseline(theta, $bodytype, 1, 1, all);
+    @include fontsize(theta, all);
+
+  }
+}
+
+.skill-box {
+  max-width: 30%;
+  margin-left: 1rem;
+  // margin-right: 0.5rem;
+  margin-top:  0.5rem;
+  padding: 0.5rem;
+  border-radius:    4px;
+  color:            $headerColor;
+  background-color: $headerBackgroundColor;
+
+  .stars {
+    float: right;
+    color: $accentColor;
+    font-size: 11px;
+    line-height: inherit;
+  }
+}
+
+p {
+  @include baseline(zeta, $bodytype, 2, 1, all);
+}
+
+p.compact {
+  @include baseline(theta, $bodytype, 1, 1, all);
+  @include fontsize(theta, all);
+}
+
+.date {
+  position: relative;
+  float: right;
+  color: $accentColor;
+  // font-family: map-get($monospacetype, font-family);
+  // font-feature-settings: 'onum' 1, 'kern' 1, 'lnum' 1;
+  // font-weight: bold;
+  @include fontsize(theta, all);
+}
+
+h5 + .compact {
+  color: $captionColor;
+}
+
+.oneline {
+  @include baseline(zeta, $bodytype, 1, 0, all);
+}
+
+.entry {
+  @include baseline(epsilon, $bodytype, 1, 0, all);
+}
+.entry + .caption {
+  @include baseline(theta, $bodytype, 1, 1, all);
+}
+
+h2, h3, h4 {
+  color: $headingColor;
+  border-bottom: 1px groove rgba(grey, 0.3);
+  font-family: map-get($headingtype, font-family);
+  font-weight: map-get($headingtype, bolder);
+  // font-weight: bold;
+}
+/*, h5, h6*/
+
+// Heading level 1.
+h1, .alpha {
+  @include sassline(
+    $fontsize:   alpha,
+    $font:       $titletype,
+    $lineheight: 2,
+    $below:      1,
+    $breakpoint: all
+  );
+}
+
+// Heading level 2.
+h2, .beta {
+  @include sassline(beta, $headingtype, 2, 1, all);
+}
+
+// Heading level 3.
+h3, .gamma {
+  @include sassline(delta, $headingtype, 2, 2, all);
+}
+
+// Heading level 4.
+h4, .delta {
+  @include sassline(delta, $headingtype, 2, 1, all);
+}
+
+// Heading level 5.
+h5 { // , .epsilon {
+  font-feature-settings: 'kern' 1, 'onum' 1, 'dlig' 1, 'liga' 1, 'lnum' 1;
+  font-family: map-get($garamondtype, font-family);
+  @include sassline(eta, $garamondtype, 1, 0, all);
+  // @include sassline(epsilon, $headingtype, 1, 0, all);
+}
+
+// Heading level 6.
+h6, .zeta {
+  @include sassline(zeta, $bodytype, 1, 0, all);
+}
+
+// Caption inline small text.
+small, .caption {
+  // font-family: map-get($headingtype, font-family);
+  // font-weight: map-get($headingtype, regular);
+  // font-style: normal;
+  @include fontsize(theta, all);
+}
+
+small {
+  line-height: 1rem;
+}
+
+.caption {
+  color: $captionColor;
+  @include baseline(theta, $headingtype, 2, 2, all);
+}
+
+// Nice spacing for captions.
+h1 + .caption, .alpha + .caption,
+h2 + .caption, .beta + .caption,
+h3 + .caption, .gamma + .caption
+h5 + .caption {
+  margin-top: -1rem;
+}
+
+.delta + .caption, .epsilon + .caption, .zeta + .caption {
+  margin-top: 0rem;
+}

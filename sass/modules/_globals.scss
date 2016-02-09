@@ -1,11 +1,43 @@
-// Global demo styles
+// Global styles
 // ---------------------------------------
+.border {
+  box-sizing: border-box;
+  border:     1px groovy grey;
+}
 
-body {
-  color:            $bodyColour;
-  background-color: $backgroundColour;
-  // font-family:      'garamond-premier-pro';
-  overflow-x:       hidden;
+.hidden {
+  display: none;
+}
+
+.faded {
+  opacity: 0.8;
+}
+
+.normal {
+  color: $textColor;
+}
+
+.white {
+  color: $white;
+}
+
+i.fa {
+  font-style: normal;
+}
+
+a {
+  @include fontsize(theta, all);
+  color: $linkColor;
+  background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($linkColor,20%) 50%);
+  background-position: 0 93%;
+  background-repeat: repeat-x;
+  background-size: 100% 0.15rem;
+  text-shadow: 0.1rem 0 $backgroundColor,0.15rem 0 $backgroundColor,-0.1rem 0 $backgroundColor,-0.15rem 0 $backgroundColor;
+
+  &:hover, &:active, &:focus {
+    cursor: pointer;
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,lighten($hoverColor,20%) 50%);
+  }
 }
 
 .page {
@@ -15,18 +47,6 @@ body {
   max-height: 29.7cm;
   offset:     hidden;
   // background: white;
-}
-
-.section {
-  padding: 2rem 0;
-
-  @include breakpoint(break-1) {
-    padding: 3rem 0;
-  }
-
-  @include breakpoint(break-2) {
-    padding: 4rem 0;
-  }
 }
 
 img {
@@ -41,6 +61,6 @@ img {
   }
 }
 
-.button-align {
-  @include baseline(zeta, $bodytype, 2, 2, all);
-}
+// .button-align {
+//   @include baseline(zeta, $bodytype, 2, 2, all);
+// }
