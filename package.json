@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "echo Nop",
-    "sync": "browser-sync start --server --files '**/*.*'",
+    "sync": "browser-sync start --server --files '*/*.css' --files '*.html'",
     "sass": "sass --compass --watch sass:css",
     "view": "electron index.js"
   },
