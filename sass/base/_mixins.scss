@@ -108,15 +108,6 @@ $max-widths:  map-values($maxwidths);
   // If specifying a breakpoint to use (and breakpoint exists and is larger than 0).
   @if $break-value == number and $breakpoint <= ($breakpoints-limit - 1) and $breakpoint > 0 {
 
-    @if $gutter == small {
-      $gutter: map-get($gutterwidths, small) * 2 / 1rem;
-    } @else if $gutter == medium {
-      $gutter: map-get($gutterwidths, medium) * 2 / 1rem;
-    } @else if $gutter == large {
-      $gutter: map-get($gutterwidths, large) * 2 / 1rem;
-    } @else {
-      $gutter: 0;
-    }
 
     $rootsize: map-get($rootsizes, rootsize-#{$breakpoint});
     $ideal-measure: map-get($measures, measure-#{$breakpoint});
@@ -403,6 +394,11 @@ $max-widths:  map-values($maxwidths);
   } @else {
     @warn "#{$breakpoint} is not valid to use as a breakpoint";
   }
+}
+
+@mixin upper {
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
 }
 
 // Clearfix.
