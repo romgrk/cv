@@ -21,5 +21,5 @@ generateStars = (stars) ->
   res = ""
   _.times fullStars, -> res += starHtml()
   # res += starHtml('half-empty') if hstar == 1
-  _.times ostars, -> res += starHtml(' normal')
+  _.times ostars, -> res += starHtml(' white')
   return res

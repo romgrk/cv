@@ -29,7 +29,7 @@ $sanstype: (
   regular: 400,
   bold: 700,
   bolder: 900,
-  cap-height: 0.67
+  cap-height: 0.69
 );
 
 $slabtype: (
@@ -42,7 +42,7 @@ $slabtype: (
 
 $romanabt: (
   font-family: 'Romana BT',
-  regular: 800,
+  regular: 500,
   bold: 800,
   cap-height: 0.67
 );
@@ -63,7 +63,7 @@ $monospacetype: (
 );
 
 $seriftype:   $garamondtype;
-$titletype:   $romanabt;
+$titletype:   $robototype;
 $headingtype: $sanstype;
 
 html { // Setting root sizes and base styles.
@@ -77,38 +77,21 @@ body {
   font-weight: map-get($bodytype, regular);
   font-style: normal;
   line-height: 2rem;
-  @include fontsize(zeta, all);
+  @include fontsize(zeta);
 }
 
 h1.title {
   font-family: map-get($titletype, font-family);
   font-weight: map-get($titletype, bolder);
-  @include sassline(
-    $fontsize:   gamma,
-    $font:       $titletype,
-    $lineheight: 3,
-    $below:      1,
-    $breakpoint: all
-  );
 }
 
-div.bar {
-  @include sassline(
-    $fontsize:   theta,
-    $font:       $sanstype,
-    $lineheight: 1,
-    $below:      0,
-    $breakpoint: all
-  );
+nav.bar {
+  font-family:    map-get($sanstype, font-family);
+  font-weight:    map-get($sanstype, regular);
 }
 
 p {
-  @include baseline(zeta, $bodytype, 2, 1, all);
-}
-
-p.compact {
-  @include baseline(theta, $bodytype, 1, 1, all);
-  @include fontsize(theta, all);
+  @include baseline(zeta, $bodytype, 2, 1);
 }
 
 // Styles for typeset text.
@@ -122,38 +105,6 @@ p.compact {
     font-style: normal;
   }
 
-  // Quotes.
-  blockquote {
-    p {
-      border-left: 0.15rem solid $linkColor;
-      font-style: map-get($bodytype, italic);
-      padding-left: 1rem;
-
-      // Add spacing below blockquote paragraphs to align to baseline grid.
-      $get-scale: map-get($modular-scale, scale-0);
-      $get-size: map-get($get-scale, zeta);
-      $rootsize: nth($sizes, 1);
-      $baseline-shift: #{($get-size / 2 * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001};
-      $baseline-push: #{3 - (($get-size * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001)};
-
-      margin-bottom: #{$baseline-push}rem;
-      padding-bottom: #{$baseline-shift}rem;
-
-      @for $i from 2 through $breakpoints-limit {
-        $get-scale: map-get($modular-scale, scale-#{$i - 1});
-        $get-size: map-get($get-scale, zeta);
-        $rootsize: nth($sizes, $i);
-        $baseline-shift: #{($get-size / 2 * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001};
-        $baseline-push: #{3 - (($get-size * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001)};
-
-        @media screen and (min-width: nth($points, $i) / 16 * 1em ) {
-          margin-bottom: #{$baseline-push}rem;
-          padding-bottom: #{$baseline-shift}rem;
-        }
-      }
-    }
-  }
-
   hr {
     background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,$captionColor 50%);
     background-position: 0 50%;
@@ -165,15 +116,10 @@ p.compact {
     padding-top: 1rem;
   }
 
-  code {
-    font-family: map-get($monospacetype, font-family);
-    line-height: 1rem;
-    @include fontsize(theta, all);
-  }
-
   code pre {
     background-color: $codeBackgroundColor;
   }
+
   pre {
     display: block;
     margin-bottom: 2rem;
@@ -203,49 +149,6 @@ p.compact {
     font-feature-settings: 'onum' 1, 'kern' 1;
   }
 
-  // Definition lists.
-  dl {
-    @include baseline(zeta, $bodytype, 2, 2, all);
-
-    dt, dd {
-      font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-
-      margin-left: 2rem;
-
-      @include breakpoint(break-1) {
-        margin-left: 0;
-      }
-    }
-
-    dt {
-      font-weight: map-get($bodytype, bold);
-    }
-
-    dd + dt {
-      padding-top: 1rem;
-    }
-  }
-
-  // Tables.
-  table {
-    font-feature-settings: 'liga' 1, 'lnum' 1, 'tnum' 1, 'kern' 1;
-
-    font-family: unquote(map-get($headingtype, font-family));
-    font-style: normal;
-    font-weight: map-get($headingtype, regular);
-    width: 100%;
-
-    @include sassline(eta, $headingtype, 2, 0, all);
-
-    thead {
-
-      th {
-        @include sassline(zeta, $headingtype, 2, 0, all);
-        padding-bottom: 1px;
-      }
-    }
-  }
-
   // Bold.
   b, strong, .bold {
     font-weight: map-get($bodytype, bold);
@@ -272,6 +175,7 @@ p.compact {
       }
     }
   }
+
   // Ordered lists.
   ol {
     list-style-type: none;
@@ -331,4 +235,81 @@ p.compact {
       }
     }
   }
+
+  // UNUSED
+
+  // Quotes.
+  blockquote {
+    p {
+      border-left: 0.15rem solid $linkColor;
+      font-style: map-get($bodytype, italic);
+      padding-left: 1rem;
+
+      // Add spacing below blockquote paragraphs to align to baseline grid.
+      $get-scale: map-get($modular-scale, scale-0);
+      $get-size: map-get($get-scale, zeta);
+      $rootsize: nth($sizes, 1);
+      $baseline-shift: #{($get-size / 2 * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001};
+      $baseline-push: #{3 - (($get-size * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001)};
+
+      margin-bottom: #{$baseline-push}rem;
+      padding-bottom: #{$baseline-shift}rem;
+
+      @for $i from 2 through $breakpoints-limit {
+        $get-scale: map-get($modular-scale, scale-#{$i - 1});
+        $get-size: map-get($get-scale, zeta);
+        $rootsize: nth($sizes, $i);
+        $baseline-shift: #{($get-size / 2 * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001};
+        $baseline-push: #{3 - (($get-size * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001)};
+
+        @media screen and (min-width: nth($points, $i) / 16 * 1em ) {
+          margin-bottom: #{$baseline-push}rem;
+          padding-bottom: #{$baseline-shift}rem;
+        }
+      }
+    }
+  }
+
+  // Definition lists.
+  /*dl {*/
+    /*@include baseline(zeta, $bodytype, 2, 2, all);*/
+
+    /*dt, dd {*/
+      /*font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;*/
+
+      /*margin-left: 2rem;*/
+
+      /*@include breakpoint(break-1) {*/
+        /*margin-left: 0;*/
+      /*}*/
+    /*}*/
+
+    /*dt {*/
+      /*font-weight: map-get($bodytype, bold);*/
+    /*}*/
+
+    /*dd + dt {*/
+      /*padding-top: 1rem;*/
+    /*}*/
+  /*}*/
+  // Tables.
+  /*table {*/
+    /*font-feature-settings: 'liga' 1, 'lnum' 1, 'tnum' 1, 'kern' 1;*/
+
+    /*font-family: unquote(map-get($headingtype, font-family));*/
+    /*font-style: normal;*/
+    /*font-weight: map-get($headingtype, regular);*/
+    /*width: 100%;*/
+
+    /*@include sassline(eta, $headingtype, 2, 0, all);*/
+
+    /*thead {*/
+
+      /*th {*/
+        /*@include sassline(zeta, $headingtype, 2, 0, all);*/
+        /*padding-bottom: 1px;*/
+      /*}*/
+    /*}*/
+  /*}*/
+
 }

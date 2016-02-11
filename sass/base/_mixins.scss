@@ -405,6 +405,13 @@ $max-widths:  map-values($maxwidths);
   }
 }
 
+@mixin compact {
+  p {
+    @include baseline(theta, $bodytype, 1, 1, all);
+    @include fontsize(theta, all);
+  }
+}
+
 @mixin upper {
   letter-spacing: 0.1rem;
   text-transform: uppercase;

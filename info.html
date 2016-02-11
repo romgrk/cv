@@ -28,28 +28,30 @@
     <!-- HEADER -->
     <header>
 
-      <h1 class="title">Romain Grégoire</h1>
-      <label class="subtitle">programmeur</label>
+    <h1 class="title">Romain Grégoire</h1>
+    <div class="subtitle">programmeur</div>
 
-      <p class="lang compact faded">
-        Anglais<br>
-        Français<br>
-        Espagnol<br>
-      </p>
-
-      <nav class="contact bar">
-          <i class="fa fa-phone"></i> 
-          (514) 778-1580
-
-          <i class="fa fa-envelope-o"></i> 
-          romgrk.cc@gmail.com
-
-          <i class="fa fa-github-square"></i>
-          github.com/romgrk
-      </nav>
+    <p class="lang compact faded">
+      Anglais<br>
+      Français<br>
+      Espagnol<br>
+    </p>
 
     </header>
 
+    <nav class="contact bar">
+        <i class="fa fa-phone"></i> 
+        (514) 778-1580
+
+        <i class="fa fa-envelope-o"></i> 
+        romgrk.cc@gmail.com
+
+        <i class="fa fa-github-square"></i>
+        github.com/romgrk
+    </nav>
+
+
+    <!-- SKILLS -->
     <div class="skill-box column column--sidebar">
       <p class="compact">
         <b>JavaScript</b>   {{5}} <br/>
@@ -82,7 +84,7 @@
         <div>{{5}} Prêt à embarquer sur un projet</div>
         <div>{{0}} Aucune connaissance</div>
       </div>
-    </div>
+    </div><!--/SKILLS -->
 
     <!-- FORMATION -->
     <div class="column column--main">
@@ -104,16 +106,14 @@
       </section>
     </div>
 
-
     <!-- EXPERIENCES -->
     <div class="column column--main">
       <h2>Expériences</h2>
       <section>
 
         <h6>
-          <span class="date">2015</span>
-          Termrk 
-          <a>http://atom.io/packages/termrk</a>
+          <span class="date">2015</span> Termrk 
+          <!--<a>http://atom.io/packages/termrk</a>-->
         </h6>
         <p class="compact"> Developpement d´application &mdash; 
         Projet personnel de developpement <em>via</em> l´usage de nouvelles
@@ -124,45 +124,49 @@
 
         <h6>
           <span class="date">2014</span>
-          Mouvement Démocratie Nouvelle <br/>
-          <a>http://meilleuredemocratie.com</a>
+          Mouvement Démocratie Nouvelle
         </h6>
+        <!--<a>http://meilleuredemocratie.com</a>-->
         <p class="compact">Développement web &mdash; ajout d'une carte intéractive des évènements
         via l'API Google Maps, ainsi que d'une section d'administration
         sécurisée. <br/>
         <code>JavaScript, HTML, PHP, SQL</code> <br/>
-        <span class="date">2016</span> Remise à jour du site.
+        <span class="date sm">2016</span> Remise à jour du site.
         </p>
 
         <h6>
-          <span class="date">2012</span>
-          Projet de DEC 
+          <span class="date">2012</span> Projet synthèse de DEC
           <!--<span class="caption">#TODO ref</span>-->
         </h6>
-        <p class="compact">Conception et implémentation en Java d'un logicial de simulation des
+        <p class="compact">Conception et implémentation en d'un logicial de simulation des
         lois de la physique, appliquées à des objets solides en 2D (ex.:
-        collisions, gravité, friction, ...)
+        collisions, gravité, friction, ...), ainsi que d´une interface graphique
+        permettant de visualiser les données générées. <br/>
+        <code>Java, XML</code>
         </p>
 
         <h6>
-          <span class="date">2009</span>
-          Apathy is boring
-          <a>http://citizenfactory.com</a>
+          <span class="date">2009</span> Apathy is boring
         </h6>
+        <!--<a>http://citizenfactory.com</a>-->
         <p class="compact">
         Programmeur web &mdash; maintenance générale et mise à jour d'une
-        application de recherche d'informations diverses en lien avec le
-        parlement canadien. <br/>
-        Application web en Ruby.</p>
+        application de recherche et de visualisation d'informations sur les
+        parlementaires canadiens. <br/>
+        Synchronisation des données avec les serveurs du parlement (qui fournit
+        ses données ouvertement &mdash; <em>open data</em>) <br/>
+        <code>Ruby, HTML, SQL</code>
+        </p>
 
       </section>
     </div><!--/EXPERIENCES -->
 
-    <section class="column column--sidebar">
+    <!-- EMPLOIS & AUTRES -->
+    <div class="column column--sidebar jobs">
       <h4>Emplois &amp; autres</h4>
 
       <p>
-      <b>Planteur d´arbres</b> <span class="date">2013-2016</span>
+      <b>Planteur d´arbres</b> <span class="date">2013-2015</span>
       <br/>
       <em>Foresterie ASL Inc., Abitibi-Est</em>
       </p>
@@ -180,7 +184,7 @@
       </p>
 
       <p>
-      <b>Tuteur (niveau primaire)</b> <span class="date">2008-2012</span>
+      <b>Tuteur (n. primaire)</b> <span class="date">2008-2012</span>
       <br/>
       <em>Travailleur autonome, Montréal</em>
       </p>
@@ -188,10 +192,10 @@
       <p>
       <b>Violoniste</b> <span class="date">2011-2012</span>
       <br/>
-      <em>Travailleur autonome, Montréal</em>
+      <em>Orchestre Philarmonique Équitable, Laval</em>
       </p>
+    </div><!--/EMPLOIS & AUTRES -->
 
-    </section>
 
   </div>
 <script type="text/javascript">

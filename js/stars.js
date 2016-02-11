@@ -29,7 +29,7 @@
       return res += starHtml();
     });
     _.times(ostars, function() {
-      return res += starHtml(' normal');
+      return res += starHtml(' white');
     });
     return res;
   };

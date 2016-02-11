@@ -14,7 +14,7 @@
 }
 
 // Container
-.section {
+section, .section {
   margin:   0 auto;
   position: relative;
   width:    94%;
@@ -32,19 +32,24 @@
   margin: 0 auto;
   width: 100%;
   @include measure(0);
+  float: left;
+  margin: inherit;
+  max-width: auto;
+  padding-left:  map-get($gutterwidths, small);
+  padding-right: map-get($gutterwidths, small);
 
-  @include breakpoint(break-1) {
-    float: left;
-    margin: inherit;
-    max-width: auto;
-    padding-left: map-get($gutterwidths, small);
-    padding-right: map-get($gutterwidths, small);
-  }
+  /*@include breakpoint(break-1) {*/
+    /*float: left;*/
+    /*margin: inherit;*/
+    /*max-width: auto;*/
+    /*padding-left: map-get($gutterwidths, small);*/
+    /*padding-right: map-get($gutterwidths, small);*/
+  /*}*/
 
-  // @include breakpoint(break-3) {
-  //   padding-left: map-get($gutterwidths, medium);
-  //   padding-right: map-get($gutterwidths, medium);
-  // }
+   /*@include breakpoint(break-3) {*/
+     /*padding-left: map-get($gutterwidths, medium);*/
+     /*padding-right: map-get($gutterwidths, medium);*/
+   /*}*/
 }
 
 // Two columns.
@@ -95,62 +100,68 @@
 
 // Sidebar.
 .column--sidebar {
-  @include breakpoint(break-1) {
-    padding-right: map-get($gutterwidths, medium);
-    @include ideal-measure(1, small, false);
-  }
+  padding-right: map-get($gutterwidths, medium);
+  @include ideal-measure(1, small, false);
+  @include compact();
+  /*@include breakpoint(break-1) {*/
+    /*padding-right: map-get($gutterwidths, medium);*/
+    /*@include ideal-measure(1, small, false);*/
+  /*}*/
 
-  @include breakpoint(break-2) {
-    @include ideal-measure(2, small, false);
-  }
+  /*@include breakpoint(break-2) {*/
+    /*@include ideal-measure(2, small, false);*/
+  /*}*/
 
-  @include breakpoint(break-3) {
-    padding-right: map-get($gutterwidths, large);
-    @include ideal-measure(3, medium, false);
-  }
+  /*@include breakpoint(break-3) {*/
+    /*padding-right: map-get($gutterwidths, large);*/
+    /*@include ideal-measure(3, medium, false);*/
+  /*}*/
 
-  @include breakpoint(break-4) {
-    @include ideal-measure(4, medium, false);
-  }
+  /*@include breakpoint(break-4) {*/
+    /*@include ideal-measure(4, medium, false);*/
+  /*}*/
 }
 
 // If sidebar on the right side.
 .column--main + .column--sidebar {
-  @include breakpoint(break-1) {
-    padding-left: map-get($gutterwidths, medium);
-    padding-right: map-get($gutterwidths, small);
-  }
+  padding-left:  map-get($gutterwidths, medium);
+  padding-right: map-get($gutterwidths, small);
+  @include compact();
+  /*@include breakpoint(break-1) {*/
+    /*padding-left: map-get($gutterwidths, medium);*/
+    /*padding-right: map-get($gutterwidths, small);*/
+  /*}*/
 
-  @include breakpoint(break-3) {
-    padding-left: map-get($gutterwidths, large);
-    padding-right: map-get($gutterwidths, medium);
-  }
+  /*@include breakpoint(break-3) {*/
+    /*padding-left: map-get($gutterwidths, large);*/
+    /*padding-right: map-get($gutterwidths, medium);*/
+  /*}*/
 }
 
 // Set the main text one level down in the modular scale for narrower columns.
-.column--trio,
-.column--quad,
-.column--sidebar {
-  @include breakpoint(break-3) {
-    p {
-      @include sassline($fontsize: eta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: 3);
-    }
+/*.column--trio,*/
+/*.column--quad,*/
+/*.column--sidebar {*/
+  /*@include breakpoint(break-3) {*/
+    /*p {*/
+      /*@include sassline($fontsize: eta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: 3);*/
+    /*}*/
 
-    li {
-      @include fontsize(eta, 3);
-    }
-  }
+    /*li {*/
+      /*@include fontsize(eta, 3);*/
+    /*}*/
+  /*}*/
 
-  @include breakpoint(break-4) {
-    p {
-      @include sassline($fontsize: eta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: 4);
-    }
+  /*@include breakpoint(break-4) {*/
+    /*p {*/
+      /*@include sassline($fontsize: eta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: 4);*/
+    /*}*/
 
-    li {
-      @include fontsize(eta, 4);
-    }
-  }
-}
+    /*li {*/
+      /*@include fontsize(eta, 4);*/
+    /*}*/
+  /*}*/
+/*}*/
 
 // Main column on the right with inline sidenotes.
 // The sidenotes will move out the column into the sidebar position aligned to the baseline.
