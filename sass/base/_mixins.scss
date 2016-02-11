@@ -405,7 +405,7 @@ $max-widths:  map-values($maxwidths);
   }
 }
 
-@include upper {
+@mixin upper {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
